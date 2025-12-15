@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <div id="cart-container"></div>
+  <div class="total" id="total">Total: ₹0</div>
+
+  <script>
+    const cartContainer = document.getElementById('cart-container');
+    const totalDisplay = document.getElementById('total');
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    let total = 0;
+
+    Object.values(cart).forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'cart-item';
+
+      itemDiv.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" />
+        <div class="cart-details">
+          <h3>${item.name}</h3>
+          <p>Price: ${item.price}</p>
+          <p>Quantity: ${item.quantity}</p>
+        </div>
+      `;
+
+      cartContainer.appendChild(itemDiv);
+
+      // Convert ₹199 to 199
+      const price = parseFloat(item.price.replace(/[^\d]/g, ''));
+      total += price * item.quantity;
+    });
+
+    totalDisplay.textContent = `Total: ₹${total}`;
+  </script>
+</body>
+</html>

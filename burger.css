@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f3f2ee;
+  padding: 20px;
+}
+
+.bk-header {
+  background-color: #d62300;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.bk-header h1 {
+  font-size: 26px;
+}
+
+.bk-header nav a {
+  text-decoration: none;
+  background-color: #a61700;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h2 {
+  margin: 10px 0 6px;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0 10px;
+}
+
+.price {
+  display: block;
+  color: #d62300;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #d62300;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #a61700;
+}
+
+.cart {
+  margin-top: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
